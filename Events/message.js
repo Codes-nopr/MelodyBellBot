@@ -1,0 +1,16 @@
+module.exports = async (client, message) => {
+	if (message.author.bot || !message.guild) return;
+	let prefix = process.env.Prefix || 'm;';
+
+	if (message.content.indexOf(prefix) !== 0) return;
+	let args = message.content.slice(prefix.length).trim().split(/ +/g);
+    let command = args.shift().toLowerCase();
+
+    let cmd = client.commands.get(command) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(command));
+
+	try {
+    	if (cmd) cmd.execute(client, message, args);
+	} catch (e) {
+		console.warn(e);
+	}
+}
