@@ -20,7 +20,7 @@ module.exports = {
 
 		let embed = new MessageEmbed()
 		.setColor(client.color.color)
-		.setDescription(`Source Code: (coming soon)`)
+		.setDescription(`Source Code: [Link!](https://github.com/MathInDOS/MelodyBellBot)`)
 		.addField(`Servers`, client.guilds.cache.size, true)
 		.addField(`Members`, client.users.cache.size, true)
 		.addField(`Channels`, client.channels.cache.size, true)
