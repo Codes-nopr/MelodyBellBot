@@ -9,6 +9,9 @@ module.exports = {
 		if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return message.channel.send(new MessageEmbed().setColor('RED').setDescription(`You are not in same voice channel.`).setTimestamp());
 		if (!client.distube.isPlaying(message)) return message.channel.send(new MessageEmbed().setColor(client.color.color).setDescription(`There are no music currently playing.`).setTimestamp())
 		let volume = args[0];
+		if (isNaN(volume)) return message.channel.send(new MessageEmbed().setColor(client.color.color).setDescription(`Volume limit must be a n integer.`).setTimestamp());
+		if (parseInt(volume) > 200) return message.channel.send(new MessageEmbed().setColor(client.color.color).setDescription(`Volume limit exceeds **200** limit.`).setTimestamp())
+		if (parseInt(volume) < 0) return message.channel.send(new MessageEmbed().setColor(client.color.color).setDescription(`Volume can't be lower than 0.`).setTimestamp());
 		if (!volume) return message.channel.send(new MessageEmbed().setColor(client.color.color).setDescription(`Please set a new volume level.`).setTimestamp());
 		if (isNaN(volume)) return message.channel.send(new MessageEmbed().setColor(client.color.color).setDescription(`Provided volume isn't a integer.`).setTimestamp());
 		try { await client.distube.setVolume(message, parseInt(volume)); return message.channel.send(new MessageEmbed().setColor(client.color.color).setDescription(`Volume changed to **${volume}**%.`)); } catch { return message.channel.send(new MessageEmbed().setColor(client.color.color).setDescription(`An error occurred while processing the command.`)); };
