@@ -9,10 +9,11 @@ module.exports = {
 		if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return message.channel.send(new MessageEmbed().setColor('RED').setDescription(`You are not in same voice channel.`).setTimestamp());
 		
 		let vc = await message.member.voice.channel;
-		await vc.join(() => {
+		try {
+			await vc.join();
 			return message.channel.send(new MessageEmbed().setColor(client.color.color).setDescription(`Joined ${vc} voice channel.`).setTimestamp());
-		}).catch(e => {
+		} catch (e) {
 			return message.channel.send(new MessageEmbed().setColor('RED').setDescription(`An error occurred while joining the voice channel.\`\`\`${e}\`\`\``));
-		})
+		}
 	}
 }
