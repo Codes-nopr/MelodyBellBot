@@ -1,5 +1,5 @@
 # MelodyBellBot
-[Warning] Discord.js v12 is deprecated and this project was been closed. Feel free to use it, to your own / pricate server.
+[Warning] Discord.js v12 is deprecated and this project was been closed. Feel free to use it, to your own / private server.
 
 Yet another simple discord music bot written in js_djsv12.5.3 with distube
 
