@@ -16,9 +16,7 @@ Yet another simple discord music bot written in js_djsv12.5.3 with distube
 
 If you found `node -gyp` error, make sure you've installed windows build tools (for only Microsoft Windows)
 
-Invite the bot from here: https://discord.com/api/oauth2/authorize?client_id=877436488344805426&permissions=36703233&scope=bot
-
-Join my Discord Server: https://discord.gg/Zpt4sV99Bp
+Join my Discord Server: https://discord.gg/2wr59akJE6
 
 # License
 Terms and conditions are applied under MIT License.
